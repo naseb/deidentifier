@@ -1,0 +1,40 @@
+# Real patient data must never be committed. This project's whole premise
+# is that PII stays local -- see the guardrail section in CLAUDE.md.
+*.csv
+*.docx
+*.pdf
+watcher.log
+launchd_stdout.log
+launchd_stderr.log
+*.reason.txt
+
+# Extra safety net: any stray case file that lands in the repo root
+# (e.g. a treatment plan saved to the wrong place) gets caught here too,
+# even though the rules above should already cover it by extension.
+/CASE-*
+
+# Runtime working folders -- created automatically by ensure_folders() in
+# watch_and_deidentify.py on first run. Never meant to be tracked.
+/Incoming/
+/Deidentified - Ready to Upload/
+/Originals - Do Not Upload/
+/Treatment Plans - Incoming/
+/Treatment Plans - Patient Ready/
+/Treatment Plans - Archive/
+/Needs Review/
+
+# Real unredacted sample PDFs used to design templates -- sensitive,
+# never tracked (see CLAUDE.md's note on Lab-templates/).
+/Lab-templates/
+
+# Transient output from the scratch/ safety tools
+/scratch/structure_review/
+/scratch/test_output/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS cruft
+.DS_Store
+Thumbs.db

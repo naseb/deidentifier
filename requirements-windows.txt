@@ -1,0 +1,2 @@
+-r requirements.txt
+win11toast>=0.35

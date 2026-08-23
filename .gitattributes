@@ -1,0 +1,7 @@
+# Force LF line endings for everything in the repo, regardless of any
+# contributor's local core.autocrlf setting. Without this, a shell script
+# committed from Windows can pick up CRLF line endings, which breaks with
+# "bad interpreter" errors when run on macOS/Linux (e.g. by
+# install_watcher_launchagent.sh) -- exactly the platform this repo is
+# being deployed to.
+* text=auto eol=lf
