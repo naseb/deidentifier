@@ -18,13 +18,15 @@ If no template detects the document, the caller gets back an empty dict and
 should route the file to manual review rather than guess.
 """
 
-from . import optimal_dx, quest, genova_oap_nutripath, genova_sibo
+from . import optimal_dx, quest, genova_oap_nutripath, genova_sibo, zrt, us_biotek
 
 TEMPLATES = [
+    us_biotek,
     optimal_dx,
     quest,
     genova_oap_nutripath,
     genova_sibo,
+    zrt,
 ]
 
 
